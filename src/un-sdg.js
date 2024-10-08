@@ -1,10 +1,10 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
-export class unSdg1 extends DDDSuper(LitElement) {
+export class unSdg extends DDDSuper(LitElement) {
 
   static get tag() {
-    return "un-sdg1";
+    return "un-sdg";
   }
 
   constructor() {
@@ -26,7 +26,7 @@ export class unSdg1 extends DDDSuper(LitElement) {
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
-        font-size: var(--un-sdg1-font-size, var(--ddd-font-size-s));
+        font-size: var(--un-sdg-font-size, var(--ddd-font-size-s));
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
@@ -56,4 +56,4 @@ export class unSdg1 extends DDDSuper(LitElement) {
   }
 }
 
-globalThis.customElements.define(unSdg1.tag, unSdg1);
+globalThis.customElements.define(unSdg.tag, unSdg);
