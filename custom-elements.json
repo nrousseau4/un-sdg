@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/un-sdg.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "unSdg",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "updateGoalImage"
+            },
+            {
+              "kind": "method",
+              "name": "getColor"
+            },
+            {
+              "kind": "method",
+              "name": "renderColor"
+            },
+            {
+              "kind": "method",
+              "name": "renderSVG"
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "goal",
+              "type": {
+                "text": "string"
+              },
+              "default": "'1'",
+              "privacy": "public",
+              "attribute": "goal"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "alt",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "alt"
+            },
+            {
+              "kind": "field",
+              "name": "source",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "source"
+            },
+            {
+              "kind": "field",
+              "name": "colorOnly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "color-only"
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "default": "'254px'",
+              "privacy": "public",
+              "attribute": "height"
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "type": {
+                "text": "string"
+              },
+              "default": "'254px'",
+              "privacy": "public",
+              "attribute": "width"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "privacy": "public",
+              "attribute": "title"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "title",
+              "fieldName": "title"
+            },
+            {
+              "name": "goal",
+              "fieldName": "goal"
+            },
+            {
+              "name": "label",
+              "fieldName": "label"
+            },
+            {
+              "name": "alt",
+              "fieldName": "alt"
+            },
+            {
+              "name": "source",
+              "fieldName": "source"
+            },
+            {
+              "name": "color-only",
+              "fieldName": "colorOnly"
+            },
+            {
+              "name": "height",
+              "fieldName": "height"
+            },
+            {
+              "name": "width",
+              "fieldName": "width"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "unSdg",
+          "declaration": {
+            "name": "unSdg",
+            "module": "src/un-sdg.js"
+          }
+        }
+      ]
+    }
+  ]
+}

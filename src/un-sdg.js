@@ -52,7 +52,7 @@ export class unSdg extends DDDSuper(LitElement) {
       label: { type: String },
       alt: { type: String },
       source: { type: String },
-      colorOnly: { type: Boolean, attribute: 'color-only' },
+      colorOnly: { type: Boolean, attribute: 'color-only', reflect: true },
       height: { type: String },
       width: { type: String }
     };
@@ -79,8 +79,8 @@ export class unSdg extends DDDSuper(LitElement) {
       
       /* styling for when colorOnly is true */
       .color-only { 
-        width: 100%;
-        height: 100%;
+        height: 254px;
+        width: 254px;
       }
     `];
   }
@@ -89,7 +89,6 @@ export class unSdg extends DDDSuper(LitElement) {
   updated(changedProperties) {
     if (changedProperties.has('goal')) {
       this.updateGoalImage();
-      this.getColor();
     }
   }
 
@@ -110,27 +109,38 @@ export class unSdg extends DDDSuper(LitElement) {
     }
   }
 
-  // if the un-sdg tag is set to colorOnly, get the color for that goal
-  getColor() {
-    if (this.colorOnly === 'true') {
+  renderColor() {
+    if (this.colorOnly == true) {
       const goalNumber = parseInt(this.goal);
-      color = goalData[goalNumber - 1].color;
+      if (goalNumber >= 1 && goalNumber <= 17) {
+        const color = goalData[goalNumber - 1].color;
+        return html`<div class="color-only" style="background-color: ${color};"></div>`;
+      }
     }
   }
 
-  render() {
-
+  renderSVG() {
     // allows user to edit image height and width in html file
     const imgSize = `--img-width: ${this.width}; --img-height: ${this.height};`;
+    
     // html constructor
     return html`
-      <img style=${imgSize}
+      <img style="${imgSize}" 
         src="${this.source}" 
         alt="${this.label || this.alt}" 
         fetchpriority="low" 
         loading="lazy"
       />
     `;
+  }
+
+  render() {
+    if (this.colorOnly == true) {
+      return this.renderColor();
+    }
+    else {
+      return this.renderSVG();
+    }
   }
 
   // haxProperties integration via file reference

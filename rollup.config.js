@@ -1,3 +1,4 @@
+import copy from 'rollup-plugin-copy';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
@@ -20,6 +21,13 @@ export default {
     html({
       minify: true,
     }),
+
+    copy({
+      targets: [
+        { src: 'lib/', dest: 'public' }
+      ]
+    }),
+    
     /** Resolve bare module imports */
     nodeResolve(),
     /** Minify JS, compile JS to a lower language target */
