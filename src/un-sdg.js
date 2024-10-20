@@ -1,31 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
-// list of all goals and colors
-const goalData = [
-  {
-    name: 'No Poverty',
-    color: '#e5243b',
-    image: new URL('../lib/svgs/goal-1.svg', import.meta.url).href,
-  },
-  { name: 'Zero Hunger', color: '#dda63a' },
-  { name: 'Good Health and Well-being', color: '#4c9f38' },
-  { name: 'Quality Education', color: '#c5192d' },
-  { name: 'Gender Equality', color: '#ff3a21' },
-  { name: 'Clean Water and Sanitation', color: '#26bde2' },
-  { name: 'Affordable and Clean Energy', color: '#fcc30b' },
-  { name: 'Decent Work and Economic Growth', color: '#a21942' },
-  { name: 'Industry, Innovation and Infrastructure', color: '#fd6925' },
-  { name: 'Reduced Inequalities', color: '#dd1367' },
-  { name: 'Sustainable Cities and Communities', color: '#fd9d24' },
-  { name: 'Responsible Consumption and Production', color: '#bf8b2e' },
-  { name: 'Climate Action', color: '#3f7e44' },
-  { name: 'Life Below Water', color: '#0a97d9' },
-  { name: 'Life on Land', color: '#56c02b' },
-  { name: 'Peace, Justice and Strong Institutions', color: '#00689d' },
-  { name: 'Partnerships for the Goals', color: '#19486a' },
-];
-
 export class unSdg extends DDDSuper(LitElement) {
 
   static get tag() {
@@ -64,6 +39,24 @@ export class unSdg extends DDDSuper(LitElement) {
 
       /* styles applied to whole page */
       :host {
+        --un-sdg-goal-1: rgb(235, 28, 44);
+        --un-sdg-goal-2: rgb(210, 160, 42);
+        --un-sdg-goal-3: rgb(44, 155, 72);
+        --un-sdg-goal-4: rgb(194, 31, 51);
+        --un-sdg-goal-5: rgb(239, 64, 42);
+        --un-sdg-goal-6: rgb(0, 173, 216);
+        --un-sdg-goal-7: rgb(253, 183, 19);
+        --un-sdg-goal-8: rgb(143, 23, 55);
+        --un-sdg-goal-9: rgb(243, 109, 36);
+        --un-sdg-goal-10: rgb(224, 21, 131);
+        --un-sdg-goal-11: rgb(249, 157, 37);
+        --un-sdg-goal-12: rgb(207, 141, 42);
+        --un-sdg-goal-13: rgb(72, 119, 61);
+        --un-sdg-goal-14: rgb(0, 125, 187);
+        --un-sdg-goal-15: rgb(63, 175, 73);
+        --un-sdg-goal-16: rgb(1, 85, 138);
+        --un-sdg-goal-17: rgb(25, 54, 103);
+
         display: inline-block;
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
@@ -109,6 +102,7 @@ export class unSdg extends DDDSuper(LitElement) {
     }
   }
 
+  // render only the svg color if the selector is set
   renderColor() {
     if (this.colorOnly == true) {
       const goalNumber = parseInt(this.goal);
@@ -119,6 +113,7 @@ export class unSdg extends DDDSuper(LitElement) {
     }
   }
 
+  // render the svg normally
   renderSVG() {
     // allows user to edit image height and width in html file
     const imgSize = `--img-width: ${this.width}; --img-height: ${this.height};`;
@@ -134,6 +129,7 @@ export class unSdg extends DDDSuper(LitElement) {
     `;
   }
 
+  // deciode which render function to actually render
   render() {
     if (this.colorOnly == true) {
       return this.renderColor();
@@ -149,5 +145,30 @@ export class unSdg extends DDDSuper(LitElement) {
       .href;
   }
 }
+
+// list of all goals and colors
+const goalData = [
+  {
+    name: 'No Poverty',
+    color: 'var(--un-sdg-goal-1)',
+    image: new URL('../lib/svgs/goal-1.svg', import.meta.url).href,
+  },
+  { name: 'Zero Hunger', color: 'var(--un-sdg-goal-2)' },
+  { name: 'Good Health and Well-being', color: 'var(--un-sdg-goal-3)' },
+  { name: 'Quality Education', color: 'var(--un-sdg-goal-4)' },
+  { name: 'Gender Equality', color: 'var(--un-sdg-goal-5)' },
+  { name: 'Clean Water and Sanitation', color: 'var(--un-sdg-goal-6)' },
+  { name: 'Affordable and Clean Energy', color: 'var(--un-sdg-goal-7)' },
+  { name: 'Decent Work and Economic Growth', color: 'var(--un-sdg-goal-8)' },
+  { name: 'Industry, Innovation and Infrastructure', color: 'var(--un-sdg-goal-9)' },
+  { name: 'Reduced Inequalities', color: 'var(--un-sdg-goal-10)' },
+  { name: 'Sustainable Cities and Communities', color: 'var(--un-sdg-goal-11)' },
+  { name: 'Responsible Consumption and Production', color: 'var(--un-sdg-goal-12)' },
+  { name: 'Climate Action', color: 'var(--un-sdg-goal-13)' },
+  { name: 'Life Below Water', color: 'var(--un-sdg-goal-14)' },
+  { name: 'Life on Land', color: 'var(--un-sdg-goal-15)' },
+  { name: 'Peace, Justice and Strong Institutions', color: 'var(--un-sdg-goal-16)' },
+  { name: 'Partnerships for the Goals', color: 'var(--un-sdg-goal-17)' },
+];
 
 globalThis.customElements.define(unSdg.tag, unSdg);
